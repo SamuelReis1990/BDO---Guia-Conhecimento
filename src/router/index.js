@@ -10,6 +10,13 @@ export default new Router({
       path: '/',
       name: 'cIndex',
       component: cIndex
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
-  ]
+  ],
+  mode: 'history',
+  linkActiveClass: 'active-page',
+  linkExactActiveClass: 'current-page'
 })
