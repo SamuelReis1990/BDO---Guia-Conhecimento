@@ -4,7 +4,8 @@
       <cMenu></cMenu>
     </header>
     <main>
-      <div id="db" v-if="parametros == 'dashBoard'">
+      <div></div>
+      <div v-if="parametros == 'dashBoard'">
         <cDashBoard></cDashBoard>
       </div>
       <div v-else-if="parametros == 'moradoresBalenos'">
@@ -12,9 +13,6 @@
       </div>
       <div v-else-if="parametros == 'balenos'">
         <cBalenos></cBalenos>
-      </div>
-      <div v-else>
-      <!-- <div @="teste">chegou aqui</div> -->
       </div>
     </main>
   </div>
@@ -32,6 +30,21 @@ export default {
       default: 'dashBoard'
     }
   },
+  methods: {
+    ExibeWebPages () {
+      if (this.parametros === 'dashBoard') {
+      } else if (this.parametros === 'moradoresBalenos') {
+        console.log('entrei no else if')
+      } else if (this.parametros === 'balenos') {
+        console.log('entrei no else if 2')
+      } else {
+        this.$router.push({path: '/'})
+      }
+    }
+  },
+  mounted () {
+    this.ExibeWebPages()
+  },
   name: 'Index',
 
   components: {
@@ -39,14 +52,8 @@ export default {
     cDashBoard,
     cMoradoresBalenos,
     cBalenos
-  }// ,
-  // methods: {
-  //   teste () {
-  //     console.log('cheguei')
-  //     this.$router.push({path: '/'})
-  //   }
+  }
 }
-
 </script>
 
 <style scoped>
