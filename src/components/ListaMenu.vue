@@ -3,12 +3,10 @@
     <md-list>
       <md-list-item>
         <md-icon>whatshot</md-icon>
-        <span>News</span>
+        <span>Pessoas</span>
         <md-list-expand>
           <md-list>
-            <md-list-item class="md-inset subMenu">World</md-list-item>           
-            <md-list-item class="md-inset subMenu">Americas</md-list-item>
-            <md-list-item class="md-inset subMenu">Europe</md-list-item>
+            <md-list-item class="md-inset subMenu" @click="RedirecionarRota('moradoresBalenos')">Moradores de Balenos</md-list-item>
           </md-list>
         </md-list-expand>
       </md-list-item>
@@ -17,12 +15,10 @@
     <md-list>
       <md-list-item>
         <md-icon>whatshot</md-icon>
-        <span>News</span>
+        <span>Terreno</span>
         <md-list-expand>
           <md-list>
-            <md-list-item class="md-inset subMenu">World</md-list-item>
-            <md-list-item class="md-inset subMenu">Americas</md-list-item>
-            <md-list-item class="md-inset subMenu">Europe</md-list-item>
+            <md-list-item class="md-inset subMenu" @click="RedirecionarRota('balenos')">Balenos</md-list-item>
           </md-list>
         </md-list-expand>
       </md-list-item>
@@ -32,7 +28,12 @@
 
 <script>
 export default {
-  name: 'ListaMenu'
+  name: 'ListaMenu',
+  methods: {
+    RedirecionarRota (rota) {
+      this.$router.push({path: rota, params: rota})
+    }
+  }
 }
 </script>
 

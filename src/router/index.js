@@ -8,12 +8,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'cIndex',
+      name: 'Index',
       component: cIndex
     },
     {
-      path: '*',
-      redirect: '/'
+      path: '/:parametros',
+      name: 'Index',
+      component: cIndex,
+      props: true
     }
   ],
   mode: 'history',

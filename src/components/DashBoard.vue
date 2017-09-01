@@ -1,6 +1,6 @@
 <template>
     <div id="DashBoard" class="phone-viewport">
-        <cCards></cCards>
+        <cCards></cCards>        
     </div>
 </template>
 
